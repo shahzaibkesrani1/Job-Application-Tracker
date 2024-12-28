@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Track your job applications, monitor progress, and stay organized with this easy-to-use Job Application Tracker tool.">
+  <meta name="keywords" content="Job Tracker, Job Application, Job Status, Job List, Career">
+  <meta name="author" content="Shahzaib">
+  <meta property="og:title" content="Job Application Tracker">
+  <meta property="og:description" content="Track your job applications and streamline your career management process with our easy-to-use job application tracker.">
+  <meta property="og:image" content="URL_of_image">
+  <meta property="og:url" content="URL_of_your_site">
+  <meta name="robots" content="index, follow">
+  <title>Job Application Tracker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@fontawesome/fontawesome-free/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Job Application Tracker</h1>
+    <div id="alertContainer"></div>
+    <div class="card shadow-sm mb-4">
+      <div class="card-header bg-primary text-white">Add New Job</div>
+      <div class="card-body">
+        <form id="jobForm">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <input type="text" id="jobTitle" class="form-control" placeholder="Job Title" required>
+            </div>
+            <div class="col-md-4">
+              <input type="text" id="companyName" class="form-control" placeholder="Company Name" required>
+            </div>
+            <div class="col-md-4">
+              <select id="jobStatus" class="form-select">
+                <option value="Applied">Applied</option>
+                <option value="Interviewing">Interviewing</option>
+                <option value="Offer">Offer</option>
+                <option value="Rejected">Rejected</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary mt-3">Add Job</button>
+        </form>
+      </div>
+    </div>
+    <div class="card shadow-sm mt-4">
+      <div class="card-header bg-secondary text-white">Job Applications</div>
+      <div class="card-body">
+        <div class="mb-3">
+          <button id="filterApplied" class="btn btn-outline-primary btn-sm me-2">Filter Applied</button>
+          <button id="filterInterviewing" class="btn btn-outline-warning btn-sm me-2">Filter Interviewing</button>
+          <button id="filterOffer" class="btn btn-outline-success btn-sm me-2">Filter Offer</button>
+          <button id="filterRejected" class="btn btn-outline-danger btn-sm">Filter Rejected</button>
+        </div>
+        <table class="table table-striped" id="jobList">
+          <thead>
+            <tr>
+              <th>Job Title</th>
+              <th>Company Name</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="faq-section my-5">
+      <h2 class="text-center mb-4">Frequently Asked Questions (FAQs)</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              What is the purpose of this Job Application Tracker?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="faqOne" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              This application helps users track the progress of their job applications. It allows you to add jobs, update their status, and view your application history in a user-friendly interface.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqTwo">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Why should I use this tool?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="faqTwo" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              This tool helps you stay organized by keeping track of all your job applications, so you never miss an important follow-up or opportunity. It helps you visually monitor where each job stands in your application process.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqThree">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Can I filter jobs based on status?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="faqThree" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes, you can filter your job applications by status (Applied, Interviewing, Offer, or Rejected) to quickly find and focus on the jobs that matter most.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqFour">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Do you provide web development services?
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="faqFour" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes, we offer web development services! You can contact us to discuss your project requirements, and we’ll help you build a customized solution.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container text-center">
+      <p class="mb-0">Designed by <strong> <a href="www.shahzaibkesrani.com" class="text-white" target="_blank">ShahzaibKesrani</a></strong></p>
+      <p>© 2024 Job Application Tracker. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
